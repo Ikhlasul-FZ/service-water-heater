@@ -61,7 +61,7 @@ export function WhyChooseUs() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   animate={{ y: [0, -10, 0] }}
-                  transition={{ 
+                  transition={{
                     y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                     opacity: { duration: 0.6 },
                     scale: { duration: 0.6 }
@@ -71,12 +71,12 @@ export function WhyChooseUs() {
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-xl rotate-12 z-20">
                     <Shield className="w-6 h-6" />
                   </div>
-                  
+
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
                     <span className="relative text-5xl lg:text-7xl font-serif italic text-primary leading-none">10+</span>
                   </div>
-                  
+
                   <div className="flex flex-col">
                     <p className="text-lg lg:text-xl font-bold text-black leading-tight mb-1">{t("whyUs.years")}</p>
                     <p className="text-[10px] lg:text-xs text-neutral-600 font-bold uppercase tracking-[0.2em]">{t("whyUs.trusted")}</p>
