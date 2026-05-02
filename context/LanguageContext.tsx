@@ -21,9 +21,9 @@ const dictionary: Dictionary = {
     },
     hero: {
       badge: "Spesialis Water Heater",
-      title_1: "Air Panas Lancar, ",
-      title_italic: "Water Heater ",
-      title_2: "Siap Pakai",
+      title_1: "Amanda ",
+      title_italic: "House ",
+      title_2: "Teknik",
       sub: "Perbaikan & perawatan water heater cepat, aman, dan bergaransi oleh teknisi berpengalaman.",
       cta_quote: "Konsultasi Gratis",
       cta_wa: "WhatsApp",
@@ -32,10 +32,14 @@ const dictionary: Dictionary = {
       tag: "Layanan Kami",
       title: "Solusi lengkap dan terpercaya untuk segala kebutuhan water heater Anda.",
       list: [
-        { title: "Perbaikan Cepat", desc: "Atasi berbagai kendala water heater Anda seperti air tidak panas, bocor, atau mati total." },
-        { title: "Pemasangan Baru", desc: "Instalasi water heater gas maupun listrik sesuai standar keamanan untuk kinerja optimal." },
-        { title: "Servis Berkala", desc: "Pembersihan kerak, pengecekan elemen pemanas, dan perawatan tangki untuk menjaga performa." },
-        { title: "Konsultasi & Pengecekan", desc: "Pemeriksaan menyeluruh untuk memastikan sistem pemanas air di rumah Anda aman dan efisien." },
+        { title: "Solusi Perbaikan Cepat", desc: "Air tidak panas atau mesin mati? Kami perbaiki segera agar aktivitas mandi Anda tidak terganggu." },
+        { title: "Pasang Unit Baru", desc: "Serahkan pemasangan water heater baru Anda pada ahlinya untuk jaminan keamanan dan kerapian instalasi." },
+        { title: "Perawatan Rutin", desc: "Cegah kerusakan dini dengan pembersihan kerak dan pengecekan elemen secara berkala agar unit lebih awet." },
+        { title: "Cek & Konsultasi", desc: "Bingung pilih unit atau sistem pipa? Konsultasikan kebutuhan air panas rumah Anda secara gratis." },
+        { title: "Ganti Spare Part", desc: "Kami hanya menggunakan suku cadang original untuk memastikan water heater Anda kembali bekerja seperti baru." },
+        { title: "Spesialis Water Heater Gas", desc: "Layanan khusus untuk sistem gas dengan standar keamanan tinggi demi ketenangan keluarga Anda." },
+        { title: "Jasa Bongkar Pasang", desc: "Pindahan rumah? Tim kami siap memindahkan unit Anda dengan hati-hati dan memasangnya kembali dengan sempurna." },
+        { title: "Siaga 24 Jam", desc: "Kendala mendesak di malam hari atau hari libur? Teknisi kami siap membantu kapan pun Anda butuhkan." },
       ]
     },
     pricing: {
@@ -72,7 +76,7 @@ const dictionary: Dictionary = {
         { title: "Bergaransi", desc: "Kami memberikan jaminan kepuasan dengan garansi perbaikan dan pemasangan untuk setiap unit." },
       ],
       years: "Tahun Pengalaman",
-      trusted: "Klien yang Terbantu"
+      trusted: "Bantu tetap nyaman dipakai"
     },
     gallery: {
       tag: "Portofolio Kami",
@@ -84,15 +88,18 @@ const dictionary: Dictionary = {
       links_title: "Akses Cepat",
       services_title: "Layanan Unggulan",
       contact_title: "Hubungi Kami",
-      rights: "© 2026 Amanda House Tehnik. Hak cipta dilindungi undang-undang.",
+      rights: "© 2026 Amanda House Teknik. Hak cipta dilindungi undang-undang.",
     },
     testimonials: {
       tag: "Kata Mereka",
       title: "Kepuasan pelanggan adalah kebanggaan kami.",
       list: [
         { name: "Andi Saputra", role: "Pemilik Rumah", text: "Pelayanannya mantap! Teknisi datang tepat waktu, kerjanya rapi, dan water heater saya langsung bisa dipakai lagi. Sangat direkomendasikan." },
-        { name: "Siska Wijaya", role: "Pemilik Kos", text: "Sudah langganan pakai jasa Amanda House Tehnik untuk water heater di kos saya. Servis berkalanya bikin unit awet dan tidak cepat rusak. Terima kasih!" },
+        { name: "Siska Wijaya", role: "Pemilik Kos", text: "Sudah langganan pakai jasa Amanda House Teknik untuk water heater di kos saya. Servis berkalanya bikin unit awet dan tidak cepat rusak. Terima kasih!" },
         { name: "Budi Santoso", role: "Klien Perumahan", text: "Pelayanannya sangat jujur dan transparan dari awal. Teknisi juga ramah dan menjelaskan cara perawatan water heater dengan sabar. Puas banget!" },
+        { name: "Rina Amelia", role: "Ibu Rumah Tangga", text: "Pelayanan sangat memuaskan. Teknisi menjelaskan detail kerusakannya dan cara perawatannya. Sekarang mandi air panas jadi tenang lagi." },
+        { name: "Hendra Pratama", role: "Pengusaha", text: "Cepat tanggap! Begitu dihubungi lewat WhatsApp, teknisi langsung dijadwalkan datang hari itu juga. Hasil kerjanya sangat profesional." },
+        { name: "Dewi Lestari", role: "Pemilik Apartemen", text: "Harga yang diberikan sangat transparan. Tidak ada biaya tersembunyi. Amanda House Teknik benar-benar jasa servis water heater terbaik." },
       ]
     }
   },
@@ -106,9 +113,9 @@ const dictionary: Dictionary = {
     },
     hero: {
       badge: "Professional Water Heater Specialists",
-      title_1: "Hot Water Ready, ",
-      title_italic: "Water Heater ",
-      title_2: "Always Reliable",
+      title_1: "Amanda ",
+      title_italic: "House ",
+      title_2: "Teknik",
       sub: "Restore your hot water comfort without interruption. Backed by experienced technicians, we provide fast, safe, and guaranteed water heater repair and maintenance services.",
       cta_quote: "Free Consultation Now",
       cta_wa: "Chat via WhatsApp",
@@ -117,10 +124,14 @@ const dictionary: Dictionary = {
       tag: "Our Services",
       title: "Comprehensive and reliable solutions for all your water heater needs.",
       list: [
-        { title: "Quick Repairs", desc: "Resolve your water heater issues such as no hot water, leaks, or total failure with expert handling." },
-        { title: "New Installations", desc: "Safe and standard-compliant installation of gas or electric water heaters for optimal performance." },
-        { title: "Regular Maintenance", desc: "Scale cleaning, heating element checks, and tank maintenance to keep your unit running efficiently." },
-        { title: "Consultation & Inspection", desc: "Thorough check-ups to ensure your hot water system is safe and energy-efficient." },
+        { title: "Instant Repair Solutions", desc: "No hot water or unit won't start? We fix it fast so your routine stays on track." },
+        { title: "Professional Installation", desc: "Leave your new installation to the experts for a safe, clean, and reliable setup." },
+        { title: "Routine Maintenance", desc: "Prevent breakdowns with deep scale cleaning and element checks to extend your unit's lifespan." },
+        { title: "Expert Consultation", desc: "Unsure about units or piping? Get a free professional assessment for your home's hot water needs." },
+        { title: "Quality Parts Replacement", desc: "We use only genuine spare parts to ensure your water heater performs like the day you bought it." },
+        { title: "Gas System Specialists", desc: "Dedicated service for gas systems with high safety standards for your family's peace of mind." },
+        { title: "Safe Unit Relocation", desc: "Moving house? Our team will carefully uninstall and reinstall your unit perfectly in your new home." },
+        { title: "24/7 Emergency Support", desc: "Urgent issues at night or on holidays? Our technicians are on call whenever you need us." },
       ]
     },
     pricing: {
@@ -169,15 +180,18 @@ const dictionary: Dictionary = {
       links_title: "Quick Links",
       services_title: "Key Services",
       contact_title: "Contact Us",
-      rights: "© 2026 Amanda House Tehnik. All rights reserved.",
+      rights: "© 2026 Amanda House Teknik. All rights reserved.",
     },
     testimonials: {
       tag: "What They Say",
       title: "Customer satisfaction is our ultimate pride.",
       list: [
         { name: "Andi Saputra", role: "Homeowner", text: "Excellent service! The technician arrived on time, worked neatly, and my water heater was back to normal in no time. Highly recommended." },
-        { name: "Siska Wijaya", role: "Property Owner", text: "I've been using Amanda House Tehnik's services for the water heaters in my boarding house. Their regular maintenance keeps the units running perfectly. Thank you!" },
+        { name: "Siska Wijaya", role: "Property Owner", text: "I've been using Amanda House Teknik's services for the water heaters in my boarding house. Their regular maintenance keeps the units running perfectly. Thank you!" },
         { name: "Budi Santoso", role: "Client", text: "The service was very honest and transparent from the start. The technician was friendly and patiently explained proper maintenance tips. Very satisfied!" },
+        { name: "Rina Amelia", role: "Housewife", text: "Very satisfying service. The technician explained the damage details and maintenance tips. Now I can enjoy my hot showers with peace of mind." },
+        { name: "Hendra Pratama", role: "Entrepreneur", text: "Very responsive! As soon as I contacted them via WhatsApp, they scheduled a technician for the same day. Very professional work." },
+        { name: "Dewi Lestari", role: "Apartment Owner", text: "The pricing is very transparent with no hidden costs. Amanda House Teknik is truly the best water heater service in the city." },
       ]
     }
   }

@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, Globe } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { WhatsAppIcon } from "../ui/Icons";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/Button";
 import { useLanguage } from "@/context/LanguageContext";
@@ -49,13 +50,13 @@ export function Navbar() {
               "relative transition-all duration-500 group-hover:scale-105",
               isScrolled ? "w-12 h-12" : "w-20 h-20"
             )}>
-              <Image src="/images/log.png" alt="Logo" fill className="object-contain" priority />
+              <Image src="/images/log.png" alt="Logo" fill sizes="(max-width: 768px) 80px, 120px" className="object-contain" priority />
             </div>
             <span className={cn(
               "font-bold tracking-tight transition-all duration-500",
               isScrolled ? "text-black text-base" : "text-white text-lg"
             )}>
-              Amanda<span className="text-primary">HouseTehnik</span>
+              Amanda<span className="text-primary">HouseTeknik</span>
             </span>
           </Link>
 
@@ -96,7 +97,7 @@ export function Navbar() {
                     !isScrolled && "border-white/20 text-white hover:bg-white/10"
                   )}
                 >
-                  <Phone className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   {t("nav.contact")}
                 </Button>
               </a>
@@ -167,7 +168,7 @@ export function Navbar() {
               <div className="space-y-4">
                 <a href="https://wa.me/6285190876262" target="_blank" rel="noopener noreferrer">
                   <Button variant="primary" size="lg" className="w-full h-14 rounded-full gap-3 text-sm shadow-xl shadow-primary/20">
-                    <Phone className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4" />
                     {t("nav.contact")}
                   </Button>
                 </a>

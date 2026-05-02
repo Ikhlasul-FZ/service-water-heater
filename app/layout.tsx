@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amanda House Tehnik | Service Water Heater",
+  title: "Amanda House Teknik | Service Water Heater",
   description: "Service Water Heater Profesional dan Terpercaya.",
 };
 

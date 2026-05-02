@@ -74,7 +74,7 @@ export function WhyChooseUs() {
 
                   <div className="relative">
                     <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
-                    <span className="relative text-5xl lg:text-7xl font-serif italic text-primary leading-none">10+</span>
+                    <span className="relative text-5xl lg:text-7xl font-serif italic text-primary leading-none">5+</span>
                   </div>
 
                   <div className="flex flex-col">

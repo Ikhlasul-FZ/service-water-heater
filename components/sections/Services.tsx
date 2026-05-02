@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Wrench, Zap, Droplets, Search } from "lucide-react";
+import { Wrench, Zap, Droplets, Search, Settings, Flame, RefreshCw, AlertCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const icons = [Wrench, Zap, Droplets, Search];
+const icons = [Wrench, Zap, Droplets, Search, Settings, Flame, RefreshCw, AlertCircle];
 
 export function Services() {
   const { t } = useLanguage();

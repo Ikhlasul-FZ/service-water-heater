@@ -16,10 +16,10 @@ export function Footer() {
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-32 h-32 transition-transform group-hover:scale-105">
-                <Image src="/images/log.png" alt="Logo" fill className="object-contain" priority />
+                <Image src="/images/log.png" alt="Logo" fill sizes="128px" className="object-contain" priority />
               </div>
               <span className="text-2xl font-bold tracking-tighter text-white">
-                Amanda <span className="text-primary">House Tehnik</span>
+                Amanda <span className="text-primary">House Teknik</span>
               </span>
             </Link>
             <p className="text-muted-foreground leading-relaxed text-lg">

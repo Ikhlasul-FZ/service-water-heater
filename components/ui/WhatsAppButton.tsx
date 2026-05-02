@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "./Icons";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ export function WhatsAppButton() {
           "relative group border-4 border-white"
         )}
       >
-        <MessageCircle className="w-7 h-7 lg:w-8 lg:h-8" />
+        <WhatsAppIcon className="w-7 h-7 lg:w-8 lg:h-8" />
 
         {/* Minimalist Label Tooltip (Hidden on small mobile, visible on tablet/desktop hover) */}
         <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-4 group-hover:translate-x-0 hidden sm:block">

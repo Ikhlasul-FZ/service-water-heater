@@ -31,21 +31,57 @@ const projects = [
     desc: "Water Heater Service",
     image: "/images/ars4.webp"
   },
+  {
+    id: "05",
+    title: "Project 5",
+    desc: "Water Heater Service",
+    image: "/images/ars5.webp"
+  },
+  {
+    id: "06",
+    title: "Project 6",
+    desc: "Water Heater Service",
+    image: "/images/ars6.webp"
+  },
+  {
+    id: "07",
+    title: "Project 7",
+    desc: "Water Heater Service",
+    image: "/images/ars7.webp"
+  },
+  {
+    id: "08",
+    title: "Project 8",
+    desc: "Water Heater Service",
+    image: "/images/ars8.webp"
+  },
 ];
 
 // Extended list for the "View All" modal
 const allArchives = [
   ...projects,
-  { id: "05", title: "Project 5", desc: "Water Heater Service", image: "/images/ars5.webp" },
-  { id: "06", title: "Project 6", desc: "Water Heater Service", image: "/images/ars6.webp" },
-  { id: "07", title: "Project 7", desc: "Water Heater Service", image: "/images/ars7.webp" },
-  { id: "08", title: "Project 8", desc: "Water Heater Service", image: "/images/ars8.webp" },
   { id: "09", title: "Project 9", desc: "Water Heater Service", image: "/images/ars9.webp" },
   { id: "10", title: "Project 10", desc: "Water Heater Service", image: "/images/ars10.webp" },
   { id: "11", title: "Project 11", desc: "Water Heater Service", image: "/images/ars11.webp" },
   { id: "12", title: "Project 12", desc: "Water Heater Service", image: "/images/ars12.webp" },
   { id: "13", title: "Project 13", desc: "Water Heater Service", image: "/images/ars13.webp" },
   { id: "14", title: "Project 14", desc: "Water Heater Service", image: "/images/ars14.webp" },
+  { id: "15", title: "Project 15", desc: "Water Heater Service", image: "/images/ars (1).webp" },
+  { id: "16", title: "Project 16", desc: "Water Heater Service", image: "/images/ars (2).webp" },
+  { id: "17", title: "Project 17", desc: "Water Heater Service", image: "/images/ars (3).webp" },
+  { id: "18", title: "Project 18", desc: "Water Heater Service", image: "/images/ars (4).webp" },
+  { id: "19", title: "Project 19", desc: "Water Heater Service", image: "/images/ars (5).webp" },
+  { id: "20", title: "Project 20", desc: "Water Heater Service", image: "/images/ars (6).webp" },
+  { id: "21", title: "Project 21", desc: "Water Heater Service", image: "/images/ars (7).webp" },
+  { id: "22", title: "Project 22", desc: "Water Heater Service", image: "/images/ars (8).webp" },
+  { id: "23", title: "Project 23", desc: "Water Heater Service", image: "/images/ars (9).webp" },
+  { id: "24", title: "Project 24", desc: "Water Heater Service", image: "/images/ars (10).webp" },
+  { id: "25", title: "Project 25", desc: "Water Heater Service", image: "/images/ars (11).webp" },
+  { id: "26", title: "Project 26", desc: "Water Heater Service", image: "/images/ars (12).webp" },
+  { id: "27", title: "Project 27", desc: "Water Heater Service", image: "/images/ars (13).webp" },
+  { id: "28", title: "Project 28", desc: "Water Heater Service", image: "/images/ars (14).webp" },
+  { id: "29", title: "Project 29", desc: "Water Heater Service", image: "/images/ars (15).webp" },
+  { id: "30", title: "Project 30", desc: "Water Heater Service", image: "/images/ars (16).webp" },
 ];
 
 export function Gallery() {
@@ -63,12 +99,6 @@ export function Gallery() {
               {t("gallery.title")}
             </h3>
           </div>
-          <button
-            onClick={() => setShowAll(true)}
-            className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 hover:text-primary transition-all duration-300 pb-2 border-b border-neutral-200 hover:border-primary self-start lg:self-auto"
-          >
-            {t("gallery.viewAll")}
-          </button>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -106,6 +136,17 @@ export function Gallery() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 lg:mt-24 flex justify-center">
+          <button
+            onClick={() => setShowAll(true)}
+            className="group relative h-14 px-10 rounded-full bg-white border border-neutral-200 text-black font-bold text-sm uppercase tracking-widest overflow-hidden transition-all duration-500 hover:border-primary hover:text-primary shadow-sm hover:shadow-xl hover:shadow-primary/10 flex items-center gap-3"
+          >
+            <span className="relative z-10">{t("gallery.viewAll")}</span>
+            <ArrowUpRight className="w-5 h-5 relative z-10 transition-transform duration-500 group-hover:rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <div className="absolute inset-0 bg-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+          </button>
         </div>
       </div>
 
