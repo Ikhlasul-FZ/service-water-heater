@@ -24,6 +24,7 @@ export function WhatsAppButton() {
         href="https://wa.me/6285190876262"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
         className={cn(
           "w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_20px_50px_rgba(37,211,102,0.3)]",
           "hover:scale-110 active:scale-95 transition-all duration-300",

@@ -101,7 +101,7 @@ export function Gallery() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -112,11 +112,12 @@ export function Gallery() {
               className="group cursor-pointer"
               onClick={() => setSelectedImage(project.image)}
             >
-              <div className="aspect-[4/5] rounded-[32px] lg:rounded-[48px] bg-neutral-100 mb-6 lg:mb-8 overflow-hidden relative border border-neutral-100 transition-transform duration-700 group-hover:scale-[0.98]">
+              <div className="aspect-[4/5] rounded-3xl lg:rounded-[48px] bg-neutral-100 mb-4 lg:mb-8 overflow-hidden relative border border-neutral-100 transition-transform duration-700 group-hover:scale-[0.98]">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.desc}`}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute top-6 left-6 lg:top-8 lg:left-8 text-[10px] font-bold text-white/50 tracking-widest drop-shadow-md">
@@ -130,7 +131,7 @@ export function Gallery() {
               </div>
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-base lg:text-lg font-semibold text-black mb-1 group-hover:text-primary transition-colors">{project.title}</h4>
+                  <h4 className="text-sm lg:text-lg font-semibold text-black mb-1 group-hover:text-primary transition-colors">{project.title}</h4>
                   <p className="text-xs lg:text-sm text-neutral-500 font-light tracking-wide">{project.desc}</p>
                 </div>
               </div>
@@ -188,8 +189,9 @@ export function Gallery() {
                       <div className="aspect-[4/5] rounded-[24px] lg:rounded-[40px] bg-neutral-100 overflow-hidden relative mb-4 border border-neutral-200">
                         <Image
                           src={item.image}
-                          alt={item.title}
+                          alt={`${item.title} - ${item.desc}`}
                           fill
+                          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-[2px]">
@@ -237,6 +239,7 @@ export function Gallery() {
                 src={selectedImage}
                 alt="Fullscreen Preview"
                 fill
+                sizes="100vw"
                 className="object-contain"
                 priority
               />

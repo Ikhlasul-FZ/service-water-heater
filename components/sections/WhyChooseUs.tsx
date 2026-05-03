@@ -49,8 +49,9 @@ export function WhyChooseUs() {
             <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[550px] aspect-[4/5] max-h-[50vh] lg:max-h-[80vh] bg-neutral-100 rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.05)] border border-neutral-100 relative group">
               <Image
                 src="/images/wcu.webp"
-                alt="Our Expertise"
+                alt="Our Expertise in Water Heater Service"
                 fill
+                sizes="(max-width: 768px) 100vw, 550px"
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

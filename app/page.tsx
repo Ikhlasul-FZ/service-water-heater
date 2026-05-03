@@ -16,6 +16,47 @@ export default function Home() {
       <Testimonials />
       <Contact />
       <WhatsAppButton />
+      
+      {/* JSON-LD for Local Business SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Amanda House Teknik",
+            "image": "https://waterheatercall.com/images/hero3.webp",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jalan Utama No. 123",
+              "addressLocality": "Jakarta",
+              "addressRegion": "DKI Jakarta",
+              "postalCode": "12345",
+              "addressCountry": "ID"
+            },
+            "url": "https://waterheatercall.com",
+            "telephone": "+6285190876262",
+            "priceRange": "$$",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              }
+            ],
+            "description": "Layanan service water heater profesional panggilan 24 jam untuk semua merk."
+          })
+        }}
+      />
     </div>
   );
 }
