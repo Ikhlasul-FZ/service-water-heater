@@ -42,7 +42,7 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded-[60px] border border-neutral-100 shadow-[0_40px_100px_rgba(0,0,0,0.02)] overflow-hidden aspect-square lg:aspect-auto lg:h-[600px] relative">
+          <div className="bg-white p-4 rounded-[60px] border border-neutral-100 shadow-[0_40px_100px_rgba(0,0,0,0.02)] overflow-hidden aspect-square lg:aspect-auto lg:h-150 relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4463886463022!2d112.72363597537674!3d-7.303641671802792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb835ad5ba07%3A0x21e2cf98ef703d2c!2sJl.%20Gunungsari%20No.15%2C%20RT.06%2FRW.08%2C%20Sawunggaling%2C%20Kec.%20Wonokromo%2C%20Surabaya%2C%20Jawa%20Timur%2060242!5e0!3m2!1sen!2sid!4v1777730516515!5m2!1sen!2sid"
               width="100%"
