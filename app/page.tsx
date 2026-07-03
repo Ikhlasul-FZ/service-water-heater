@@ -28,10 +28,10 @@ export default function Home() {
             "image": "https://waterheatercall.com/images/hero3.webp",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Jalan Utama No. 123",
-              "addressLocality": "Jakarta",
-              "addressRegion": "DKI Jakarta",
-              "postalCode": "12345",
+              "streetAddress": "Jalan Gunung Sari No. 15 Sawunggaling, Wonokromo",
+              "addressLocality": "Surabaya",
+              "addressRegion": "Jawa Timur",
+              "postalCode": "60242",
               "addressCountry": "ID"
             },
             "url": "https://waterheatercall.com",
