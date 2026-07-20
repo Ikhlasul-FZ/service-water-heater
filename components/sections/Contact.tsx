@@ -27,7 +27,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-neutral-400 uppercase tracking-widest font-bold mb-1">Number</p>
-                  <p className="text-black font-semibold">085190876262</p>
+                  <p className="text-black font-semibold">085337093748</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

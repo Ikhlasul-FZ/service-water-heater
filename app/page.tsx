@@ -35,7 +35,7 @@ export default function Home() {
               "addressCountry": "ID"
             },
             "url": "https://waterheatercall.com",
-            "telephone": "+6285190876262",
+            "telephone": "+6285337093748",
             "priceRange": "$$",
             "openingHoursSpecification": [
               {

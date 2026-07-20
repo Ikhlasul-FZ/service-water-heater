@@ -58,13 +58,13 @@ export function Footer() {
             <h4 className="text-xl font-bold mb-8 text-white tracking-tight">{t("footer.contact_title")}</h4>
             <ul className="space-y-6">
               <li className="flex items-start gap-4 group cursor-pointer">
-                <a href="https://wa.me/6285190876262" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4">
+                <a href="https://wa.me/6285337093748" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase font-bold tracking-widest mb-1">Call Us</p>
-                    <p className="text-white font-bold">085190876262</p>
+                    <p className="text-white font-bold">085337093748</p>
                   </div>
                 </a>
               </li>

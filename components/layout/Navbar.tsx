@@ -88,7 +88,7 @@ export function Navbar() {
                 {lang}
               </button>
 
-              <a href="https://wa.me/6285190876262" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/6285337093748" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant={isScrolled ? "primary" : "outline"}
                   size="sm"
@@ -166,7 +166,7 @@ export function Navbar() {
               </div>
 
               <div className="space-y-4">
-                <a href="https://wa.me/6285190876262" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/6285337093748" target="_blank" rel="noopener noreferrer">
                   <Button variant="primary" size="lg" className="w-full h-14 rounded-full gap-3 text-sm shadow-xl shadow-primary/20">
                     <WhatsAppIcon className="w-4 h-4" />
                     {t("nav.contact")}

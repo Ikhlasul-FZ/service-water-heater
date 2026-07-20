@@ -21,7 +21,7 @@ export function WhatsAppButton() {
           damping: 20,
           delay: 1
         }}
-        href="https://wa.me/6285190876262"
+        href="https://wa.me/6285337093748"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

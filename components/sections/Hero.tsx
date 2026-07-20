@@ -88,7 +88,7 @@ export function Hero() {
               </Button>
             </a>
             <a
-              href="https://wa.me/6285190876262"
+              href="https://wa.me/6285337093748"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
