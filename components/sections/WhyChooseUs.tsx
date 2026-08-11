@@ -1,94 +1,111 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Shield, Clock, BadgeDollarSign, Headphones } from "lucide-react";
+import { Users, Star, Truck, Award, CheckCircle2, MapPin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const icons = [Shield, Clock, BadgeDollarSign, Headphones];
+const statIcons = [Users, Star, Truck, Award];
 
 export function WhyChooseUs() {
   const { t } = useLanguage();
-  const features = t("whyUs.list");
+  const stats = t("whyUs.stats") || [];
+  const areas = t("whyUs.areas") || [];
 
   return (
-    <section id="why-us" className="relative min-h-screen lg:h-[100dvh] flex items-center bg-white overflow-hidden py-20 lg:py-0">
-      <div className="container mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="order-2 lg:order-1">
-            <h2 className="text-xs lg:text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4 lg:mb-6">{t("whyUs.tag")}</h2>
-            <h3 className="text-3xl lg:text-5xl font-medium mb-6 lg:mb-10 leading-tight text-black tracking-tight">
-              {t("whyUs.title")}
-            </h3>
-            <p className="text-base lg:text-lg text-neutral-600 mb-10 lg:mb-16 font-light leading-relaxed max-w-lg">
-              {t("whyUs.sub")}
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-8 lg:gap-10">
-              {features.map((f: any, index: number) => {
-                const Icon = icons[index];
-                return (
-                  <div key={f.title} className="group">
-                    <div className="flex items-center gap-3 mb-3 lg:mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <h4 className="text-base lg:text-lg font-semibold text-black">{f.title}</h4>
-                    </div>
-                    <p className="text-neutral-500 text-xs lg:text-sm leading-relaxed font-light">
-                      {f.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[550px] aspect-[4/5] max-h-[50vh] lg:max-h-[80vh] bg-neutral-100 rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.05)] border border-neutral-100 relative group">
-              <Image
-                src="/images/wcu.webp"
-                alt="Our Expertise in Water Heater Service"
-                fill
-                sizes="(max-width: 768px) 100vw, 550px"
-                className="object-cover transition-transform duration-1000 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-              <div className="absolute bottom-8 left-8 right-8 lg:bottom-12 lg:left-12 lg:right-12">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                    opacity: { duration: 0.6 },
-                    scale: { duration: 0.6 }
-                  }}
-                  className="glass p-6 lg:p-10 rounded-[40px] border border-white/30 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] flex items-center gap-6 relative"
+    <section id="why-us" className="py-16 sm:py-24 bg-white border-t border-neutral-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Dark Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto bg-[#0a0d12] text-white rounded-2xl shadow-2xl p-6 sm:p-8 mb-16 sm:mb-20 border border-white/10"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {stats.map((stat: any, index: number) => {
+              const Icon = statIcons[index % statIcons.length];
+              return (
+                <div
+                  key={stat.label}
+                  className={`flex flex-col items-center text-center px-4 ${
+                    index >= 2 ? "pt-6 md:pt-0" : ""
+                  }`}
                 >
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-xl rotate-12 z-20">
-                    <Shield className="w-6 h-6" />
+                  <div className="mb-3 text-[#d4af37]">
+                    <Icon className="w-8 h-8 sm:w-10 sm:h-10 stroke-[1.5]" />
                   </div>
-
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
-                    <span className="relative text-5xl lg:text-7xl font-serif italic text-primary leading-none">5+</span>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <p className="text-lg lg:text-xl font-bold text-black leading-tight mb-1">{t("whyUs.years")}</p>
-                    <p className="text-[10px] lg:text-xs text-neutral-600 font-bold uppercase tracking-[0.2em]">{t("whyUs.trusted")}</p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            {/* Subtle floating decorative element */}
-            <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 w-32 h-32 lg:w-48 lg:h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#f3cf7a] mb-1 tracking-tight">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs sm:text-sm text-neutral-300 font-medium leading-tight">
+                    {stat.label}
+                  </span>
+                </div>
+              );
+            })}
           </div>
+        </motion.div>
+
+        {/* Section Title */}
+        <div className="text-center mb-10 sm:mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black tracking-tight uppercase"
+          >
+            {t("whyUs.area_title")}
+          </motion.h2>
+
+          {/* Underline Accent */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+          />
         </div>
+
+        {/* Coverage Areas 3-Column List */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-12 sm:mb-16 px-1 sm:px-4"
+        >
+          {areas.map((area: string) => (
+            <div
+              key={area}
+              className="flex items-center gap-1.5 sm:gap-3 bg-white p-2 sm:p-3.5 rounded-xl border border-neutral-200/70 hover:border-[#d4af37]/60 hover:shadow-md transition-all duration-300"
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#d4af37] fill-[#d4af37]/20 shrink-0" />
+              <span className="text-[10px] sm:text-xs md:text-sm lg:text-base font-extrabold text-neutral-800 tracking-tight leading-tight line-clamp-2">
+                {area}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Bottom Highlight Banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="max-w-4xl mx-auto bg-[#fdf9ef] border border-[#f5e5bd] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left shadow-xs"
+        >
+          <div className="w-12 h-12 rounded-full bg-[#d4af37]/15 flex items-center justify-center shrink-0">
+            <MapPin className="w-7 h-7 text-[#d4af37] fill-[#d4af37]/30" />
+          </div>
+          <p className="text-base sm:text-lg font-extrabold text-neutral-900 leading-snug">
+            {t("whyUs.banner")}
+          </p>
+        </motion.div>
       </div>
     </section>
   );

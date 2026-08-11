@@ -3,85 +3,28 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, X, Image as ImageIcon } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
-  {
-    id: "01",
-    title: "Project 1",
-    desc: "Water Heater Installation",
-    image: "/images/ars1.webp"
-  },
-  {
-    id: "02",
-    title: "Project 2",
-    desc: "Water Heater Installation",
-    image: "/images/ars2.webp"
-  },
-  {
-    id: "03",
-    title: "Project 3",
-    desc: "Water Heater Service",
-    image: "/images/ars3.webp"
-  },
-  {
-    id: "04",
-    title: "Project 4",
-    desc: "Water Heater Service",
-    image: "/images/ars4.webp"
-  },
-  {
-    id: "05",
-    title: "Project 5",
-    desc: "Water Heater Service",
-    image: "/images/ars5.webp"
-  },
-  {
-    id: "06",
-    title: "Project 6",
-    desc: "Water Heater Service",
-    image: "/images/ars6.webp"
-  },
-  {
-    id: "07",
-    title: "Project 7",
-    desc: "Water Heater Service",
-    image: "/images/ars7.webp"
-  },
-  {
-    id: "08",
-    title: "Project 8",
-    desc: "Water Heater Service",
-    image: "/images/ars8.webp"
-  },
+  { id: "01", title: "Perbaikan Water Heater", desc: "Perbaikan Thermostat & ELCB", image: "/images/ars1.webp" },
+  { id: "02", title: "Service Water Heater Panggilan", desc: "Perbaikan Pemantik & Valve", image: "/images/ars2.webp" },
+  { id: "03", title: "Servis Pemanas Air", desc: "Kuras Tangki & Perbaikan Bocor", image: "/images/ars3.webp" },
+  { id: "04", title: "Descaling & Pembersihan Kerak", desc: "Penggantian Anoda Magnesium", image: "/images/ars4.webp" },
+  { id: "05", title: "Service Ariston Water Heater", desc: "Ganti Elemen Pemanas", image: "/images/ars5.webp" },
+  { id: "06", title: "Service Modena Water Heater", desc: "Kalibrasi Modul & Sensor", image: "/images/ars6.webp" },
+  { id: "07", title: "Service WIKA Water Heater", desc: "Perbaikan Panel & Pipa", image: "/images/ars7.webp" },
+  { id: "08", title: "Pemasangan Unit Baru", desc: "Instalasi Pipa & Safety Valve", image: "/images/ars8.webp" },
 ];
 
-// Extended list for the "View All" modal
 const allArchives = [
   ...projects,
-  { id: "09", title: "Project 9", desc: "Water Heater Service", image: "/images/ars9.webp" },
-  { id: "10", title: "Project 10", desc: "Water Heater Service", image: "/images/ars10.webp" },
-  { id: "11", title: "Project 11", desc: "Water Heater Service", image: "/images/ars11.webp" },
-  { id: "12", title: "Project 12", desc: "Water Heater Service", image: "/images/ars12.webp" },
-  { id: "13", title: "Project 13", desc: "Water Heater Service", image: "/images/ars13.webp" },
-  { id: "14", title: "Project 14", desc: "Water Heater Service", image: "/images/ars14.webp" },
-  { id: "15", title: "Project 15", desc: "Water Heater Service", image: "/images/ars (1).webp" },
-  { id: "16", title: "Project 16", desc: "Water Heater Service", image: "/images/ars (2).webp" },
-  { id: "17", title: "Project 17", desc: "Water Heater Service", image: "/images/ars (3).webp" },
-  { id: "18", title: "Project 18", desc: "Water Heater Service", image: "/images/ars (4).webp" },
-  { id: "19", title: "Project 19", desc: "Water Heater Service", image: "/images/ars (5).webp" },
-  { id: "20", title: "Project 20", desc: "Water Heater Service", image: "/images/ars (6).webp" },
-  { id: "21", title: "Project 21", desc: "Water Heater Service", image: "/images/ars (7).webp" },
-  { id: "22", title: "Project 22", desc: "Water Heater Service", image: "/images/ars (8).webp" },
-  { id: "23", title: "Project 23", desc: "Water Heater Service", image: "/images/ars (9).webp" },
-  { id: "24", title: "Project 24", desc: "Water Heater Service", image: "/images/ars (10).webp" },
-  { id: "25", title: "Project 25", desc: "Water Heater Service", image: "/images/ars (11).webp" },
-  { id: "26", title: "Project 26", desc: "Water Heater Service", image: "/images/ars (12).webp" },
-  { id: "27", title: "Project 27", desc: "Water Heater Service", image: "/images/ars (13).webp" },
-  { id: "28", title: "Project 28", desc: "Water Heater Service", image: "/images/ars (14).webp" },
-  { id: "29", title: "Project 29", desc: "Water Heater Service", image: "/images/ars (15).webp" },
-  { id: "30", title: "Project 30", desc: "Water Heater Service", image: "/images/ars (16).webp" },
+  { id: "09", title: "Service Water Heater Rinnai", desc: "Perbaikan Kelistrikan & Sensor", image: "/images/ars9.webp" },
+  { id: "10", title: "Service Water Heater Beko", desc: "Pembersihan Elemen & Pipa", image: "/images/ars10.webp" },
+  { id: "11", title: "Service Paloma Water Heater", desc: "Ganti Membrane & Selang", image: "/images/ars11.webp" },
+  { id: "12", title: "Service Ferroli Water Heater", desc: "Ganti Termostat Dual System", image: "/images/ars12.webp" },
+  { id: "13", title: "Service Electrolux Tank", desc: "Perbaikan Tangki & Seal", image: "/images/ars13.webp" },
+  { id: "14", title: "Service Daiba Water Heater", desc: "Perbaikan Modul Automatic", image: "/images/ars14.webp" },
 ];
 
 export function Gallery() {
@@ -90,119 +33,148 @@ export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section id="gallery" className="py-20 lg:py-32 bg-white">
-      <div className="container mx-auto px-8 md:px-12 lg:px-16">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-10 mb-16 lg:mb-24">
-          <div className="max-w-2xl">
-            <h2 className="text-xs lg:text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4 lg:mb-6">{t("gallery.tag")}</h2>
-            <h3 className="text-3xl lg:text-5xl font-medium tracking-tight text-black leading-tight">
-              {t("gallery.title")}
-            </h3>
-          </div>
+    <section id="gallery" className="py-16 sm:py-24 bg-white border-t border-neutral-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
+        <div className="text-center mb-12 sm:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black tracking-tight uppercase"
+          >
+            {t("gallery.tag")}
+          </motion.h2>
+
+          {/* Underline Accent */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+          />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group cursor-pointer bg-white border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:border-[#d4af37]/60 transition-all duration-300 flex flex-col"
               onClick={() => setSelectedImage(project.image)}
             >
-              <div className="aspect-[4/5] rounded-3xl lg:rounded-[48px] bg-neutral-100 mb-4 lg:mb-8 overflow-hidden relative border border-neutral-100 transition-transform duration-700 group-hover:scale-[0.98]">
+              {/* Image Box */}
+              <div className="aspect-4/5 w-full bg-neutral-100 relative overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={`${project.title} - ${project.desc}`}
+                  alt={project.title}
                   fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
-                <div className="absolute top-6 left-6 lg:top-8 lg:left-8 text-[10px] font-bold text-white/50 tracking-widest drop-shadow-md">
-                  {project.id}
+
+                {/* Top Badge Overlay */}
+                <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[9px] font-extrabold text-[#f3cf7a] border border-white/10 uppercase tracking-widest">
+                  #{project.id}
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-[2px]">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-110">
-                    <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5" />
+
+                {/* Hover Golden Overlay Icon */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+                    <ArrowUpRight className="w-5 h-5 stroke-[2.5]" />
                   </div>
                 </div>
               </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="text-sm lg:text-lg font-semibold text-black mb-1 group-hover:text-primary transition-colors">{project.title}</h4>
-                  <p className="text-xs lg:text-sm text-neutral-500 font-light tracking-wide">{project.desc}</p>
-                </div>
+
+              {/* Text Info */}
+              <div className="p-4 flex flex-col text-left bg-white">
+                <h3 className="text-xs sm:text-sm font-extrabold text-black group-hover:text-[#c59b27] transition-colors line-clamp-1 uppercase tracking-tight">
+                  {project.title}
+                </h3>
+                <p className="text-[10px] sm:text-xs text-neutral-500 font-normal line-clamp-1 mt-0.5">
+                  {project.desc}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 lg:mt-24 flex justify-center">
+        {/* View All Button */}
+        <div className="flex justify-center">
           <button
             onClick={() => setShowAll(true)}
-            className="group relative h-14 px-10 rounded-full bg-white border border-neutral-200 text-black font-bold text-sm uppercase tracking-widest overflow-hidden transition-all duration-500 hover:border-primary hover:text-primary shadow-sm hover:shadow-xl hover:shadow-primary/10 flex items-center gap-3"
+            className="flex items-center justify-center gap-3 bg-[#0a0d12] hover:bg-[#151921] border border-[#d4af37]/80 text-[#f3cf7a] px-8 py-4 rounded-xl sm:rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
           >
-            <span className="relative z-10">{t("gallery.viewAll")}</span>
-            <ArrowUpRight className="w-5 h-5 relative z-10 transition-transform duration-500 group-hover:rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            <div className="absolute inset-0 bg-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+            <ImageIcon className="w-4 h-4 text-[#d4af37]" />
+            <span>{t("gallery.viewAll")}</span>
           </button>
         </div>
       </div>
 
       {/* Full Screen Gallery Modal */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {showAll && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] bg-white flex flex-col"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-[#07090c] text-white flex flex-col"
           >
-            <div className="container mx-auto px-8 md:px-12 lg:px-16 py-10 flex justify-between items-center border-b border-neutral-100">
-              <div>
-                <h2 className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">{t("gallery.tag")}</h2>
-                <h3 className="text-2xl font-medium text-black tracking-tight">Full Archive</h3>
+            <div className="container mx-auto px-6 py-6 flex justify-between items-center border-b border-white/10">
+              <div className="flex flex-col text-left">
+                <h2 className="text-xs font-bold text-[#d4af37] uppercase tracking-widest">
+                  {t("gallery.tag")}
+                </h2>
+                <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
+                  Dokumentasi Lengkap Portofolio Service Water Heater
+                </h3>
               </div>
               <button
                 onClick={() => setShowAll(false)}
-                className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-500 shadow-sm"
+                className="w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all cursor-pointer"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-8 lg:p-16">
+            <div className="flex-1 overflow-y-auto p-6 sm:p-10">
               <div className="container mx-auto">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-10">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                   {allArchives.map((item, i) => (
-                    <motion.div
+                    <div
                       key={`${item.id}-${i}`}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.05 }}
-                      className="group cursor-pointer"
+                      className="bg-black/60 border border-white/15 rounded-2xl overflow-hidden cursor-pointer group hover:border-[#d4af37]/60 transition-all"
                       onClick={() => setSelectedImage(item.image)}
                     >
-                      <div className="aspect-[4/5] rounded-[24px] lg:rounded-[40px] bg-neutral-100 overflow-hidden relative mb-4 border border-neutral-200">
+                      <div className="aspect-4/5 relative bg-neutral-900">
                         <Image
                           src={item.image}
-                          alt={`${item.title} - ${item.desc}`}
+                          alt={item.title}
                           fill
-                          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-[2px]">
-                          <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl">
-                            <ArrowUpRight className="w-4 h-4" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <div className="w-9 h-9 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-lg">
+                            <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                           </div>
                         </div>
                       </div>
-                      <h4 className="text-sm font-bold text-black group-hover:text-primary transition-colors">{item.title}</h4>
-                      <p className="text-[10px] text-neutral-500 font-medium uppercase tracking-wider">{item.desc}</p>
-                    </motion.div>
+                      <div className="p-3 text-left">
+                        <h4 className="text-xs font-extrabold text-white uppercase line-clamp-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-[10px] text-neutral-400 font-medium line-clamp-1 mt-0.5">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -218,28 +190,27 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 lg:p-10"
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-10 right-10 w-14 h-14 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all z-[120]"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all z-10 cursor-pointer"
               onClick={() => setSelectedImage(null)}
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6" />
             </button>
 
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-5xl aspect-[16/10] lg:aspect-auto lg:h-[80vh] rounded-[40px] overflow-hidden shadow-2xl"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative w-full max-w-4xl h-[75vh] rounded-3xl overflow-hidden border border-white/20 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
                 src={selectedImage}
                 alt="Fullscreen Preview"
                 fill
-                sizes="100vw"
                 className="object-contain"
                 priority
               />

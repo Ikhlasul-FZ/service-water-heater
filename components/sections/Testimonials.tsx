@@ -1,145 +1,137 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ThumbsUp, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Testimonials() {
   const { t } = useLanguage();
-  const testimonials = t("testimonials.list");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const testimonials = t("testimonials.list") || [];
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const next = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  // Progress bar logic
+  const { scrollXProgress } = useScroll({ container: scrollRef });
+  const scaleX = useSpring(scrollXProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const scrollPrev = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
   };
 
-  const prev = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 200 : -200,
-      opacity: 0,
-      scale: 0.9,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 200 : -200,
-      opacity: 0,
-      scale: 0.9,
-    }),
+  const scrollNext = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
   };
 
   return (
-    <section className="py-24 lg:py-32 bg-[#050505] text-white overflow-hidden relative">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
-         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full" />
-      </div>
+    <section className="py-16 sm:py-24 bg-[#07090c] text-white overflow-hidden relative border-t border-white/10">
+      {/* Ambient Radial Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#d4af37]/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="container mx-auto px-8 md:px-12 lg:px-16 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-24">
-          <div className="max-w-2xl text-center lg:text-left">
-            <h2 className="text-xs lg:text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4 lg:mb-6">{t("testimonials.tag")}</h2>
-            <h3 className="text-3xl lg:text-5xl font-medium tracking-tight leading-tight">
-              {t("testimonials.title")}
-            </h3>
-          </div>
-          
-          <div className="flex items-center justify-center lg:justify-end gap-4">
-             <button 
-               onClick={prev}
-               className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all duration-500 group"
-             >
-                <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
-             </button>
-             <button 
-               onClick={next}
-               className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all duration-500 group"
-             >
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
-             </button>
-          </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Heading */}
+        <div className="text-center mb-10 sm:mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase"
+          >
+            {t("testimonials.tag")}
+          </motion.h2>
+
+          {/* Underline Accent */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4 mb-4"
+          />
+
+          <p className="text-xs sm:text-sm text-neutral-400 font-medium max-w-lg mx-auto">
+            {t("testimonials.title")}
+          </p>
         </div>
 
-        <div className="relative min-h-[400px] flex items-center justify-center">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
+        {/* Top Controls */}
+        <div className="flex justify-end gap-3 mb-6 max-w-6xl mx-auto px-2">
+          <button
+            onClick={scrollPrev}
+            aria-label="Previous Testimonial"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#d4af37]/50 bg-black/60 text-[#f3cf7a] hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all duration-300 shadow-md cursor-pointer"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={scrollNext}
+            aria-label="Next Testimonial"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#d4af37]/50 bg-black/60 text-[#f3cf7a] hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all duration-300 shadow-md cursor-pointer"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Carousel Scroll Container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 sm:gap-8 overflow-x-auto pb-8 snap-x snap-mandatory max-w-6xl mx-auto no-scrollbar"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {testimonials.map((testi: any, i: number) => (
             <motion.div
-              key={currentIndex}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.4 },
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = Math.abs(offset.x) * velocity.x;
-                if (swipe < -500) next();
-                else if (swipe > 500) prev();
-              }}
-              className="w-full max-w-4xl mx-auto cursor-grab active:cursor-grabbing"
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="min-w-72.5 sm:min-w-90 lg:min-w-95 snap-start"
             >
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[40px] lg:rounded-[64px] p-10 lg:p-20 relative overflow-hidden group">
-                 {/* Large decorative quote icon */}
-                 <Quote className="absolute -top-10 -left-10 w-40 h-40 text-primary/5 rotate-12" />
-                 
-                 <div className="relative z-10">
-                    <div className="flex gap-1 mb-10 text-primary justify-center lg:justify-start">
-                      {[...Array(5)].map((_, i) => (
-                        <ThumbsUp key={i} className="w-5 h-5 lg:w-6 lg:h-6 fill-current" />
-                      ))}
-                    </div>
-                    
-                    <p className="text-xl lg:text-3xl font-serif italic mb-12 lg:mb-16 text-neutral-200 leading-relaxed text-center lg:text-left">
-                      &quot;{testimonials[currentIndex].text}&quot;
-                    </p>
-                    
-                    <div className="flex flex-col lg:flex-row items-center gap-6 border-t border-white/10 pt-10">
-                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl font-bold border border-primary/30 uppercase">
-                         {testimonials[currentIndex].name.charAt(0)}
-                      </div>
-                      <div className="text-center lg:text-left">
-                        <p className="font-bold text-xl lg:text-2xl text-white tracking-tight">{testimonials[currentIndex].name}</p>
-                        <p className="text-xs lg:text-sm text-neutral-500 uppercase tracking-[0.2em] mt-2 font-medium">{testimonials[currentIndex].role}</p>
-                      </div>
-                    </div>
-                 </div>
+              <div className="h-full p-6 sm:p-8 rounded-3xl bg-[#0c0f15] border border-white/15 hover:border-[#d4af37]/60 shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden text-left">
+                {/* Quote Icon */}
+                <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5 group-hover:text-[#d4af37]/20 transition-colors duration-300" />
+
+                {/* 5 Rating Stars */}
+                <div className="flex items-center gap-1 mb-4 text-[#d4af37]">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-[#d4af37] stroke-[1.5]" />
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal mb-6 relative z-10 italic">
+                  &quot;{testi.text}&quot;
+                </p>
+
+                {/* User Info */}
+                <div className="mt-auto pt-4 border-t border-white/10 relative z-10 flex flex-col">
+                  <p className="font-extrabold text-sm sm:text-base text-white tracking-tight leading-tight">
+                    {testi.name}
+                  </p>
+                  <p className="text-[10px] sm:text-xs font-bold text-[#d4af37] uppercase tracking-wider mt-0.5">
+                    {testi.role}
+                  </p>
+                </div>
               </div>
             </motion.div>
-          </AnimatePresence>
+          ))}
+        </div>
 
-          {/* Pagination dots */}
-          <div className="absolute -bottom-12 flex gap-3">
-             {testimonials.map((_: any, i: number) => (
-               <button
-                 key={i}
-                 onClick={() => {
-                   setDirection(i > currentIndex ? 1 : -1);
-                   setCurrentIndex(i);
-                 }}
-                 className={`h-2 transition-all duration-500 rounded-full ${
-                   i === currentIndex ? "w-10 bg-primary" : "w-2 bg-white/20 hover:bg-white/40"
-                 }`}
-               />
-             ))}
+        {/* Progress Bar Container */}
+        <div className="max-w-4xl mx-auto px-4 mt-6">
+          <div className="h-0.5 w-full bg-white/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-[#d4af37]"
+              style={{ scaleX, originX: 0 }}
+            />
           </div>
         </div>
       </div>

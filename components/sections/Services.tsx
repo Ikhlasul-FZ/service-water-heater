@@ -2,43 +2,66 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Wrench, Zap, Droplets, Search, Settings, Flame, RefreshCw, AlertCircle } from "lucide-react";
+import { UserCheck, Search, Banknote, Settings, ShieldCheck, Home } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const icons = [Wrench, Zap, Droplets, Search, Settings, Flame, RefreshCw, AlertCircle];
+const icons = [UserCheck, Search, Banknote, Settings, ShieldCheck, Home];
 
 export function Services() {
   const { t } = useLanguage();
-  const servicesList = t("services.list");
+  const servicesItems = t("services.items") || [];
 
   return (
-    <section id="services" className="py-20 lg:py-32 bg-white border-t border-neutral-100">
-      <div className="container mx-auto px-8 md:px-12 lg:px-16">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <h2 className="text-xs lg:text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4 lg:mb-6">{t("services.tag")}</h2>
-          <h3 className="text-3xl lg:text-5xl font-medium tracking-tight text-black leading-tight">
+    <section id="services" className="py-16 sm:py-24 bg-white border-t border-neutral-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
+        <div className="text-center mb-12 sm:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black tracking-tight uppercase"
+          >
             {t("services.title")}
-          </h3>
+          </motion.h2>
+
+          {/* Underline Accent */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+          />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-8">
-          {servicesList.map((service: any, index: number) => {
-            const Icon = icons[index];
+        {/* 6 Feature Cards Grid */}
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {servicesItems.map((item: any, index: number) => {
+            const Icon = icons[index % icons.length];
             return (
               <motion.div
-                key={service.title}
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col group"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl p-3 sm:p-8 lg:p-10 flex flex-col items-center text-center hover:shadow-xl hover:border-[#d4af37]/60 transition-all duration-300 group"
               >
-                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-2xl bg-neutral-100 flex items-center justify-center text-neutral-500 mb-4 lg:mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
+                {/* Gold Icon */}
+                <div className="mb-2 sm:mb-5 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12 stroke-[1.5]" />
                 </div>
-                <h4 className="text-base lg:text-xl font-semibold mb-2 lg:mb-4 text-black">{service.title}</h4>
-                <p className="text-xs lg:text-base text-neutral-600 leading-relaxed font-light">
-                  {service.desc}
+
+                {/* Card Title */}
+                <h3 className="text-[11px] sm:text-base lg:text-xl font-extrabold text-black mb-1 sm:mb-3 leading-tight tracking-tight">
+                  {item.title}
+                </h3>
+
+                {/* Card Description */}
+                <p className="text-[9.5px] sm:text-xs lg:text-sm text-neutral-500 leading-tight sm:leading-relaxed font-normal max-w-xs line-clamp-3 sm:line-clamp-none">
+                  {item.desc}
                 </p>
               </motion.div>
             );
