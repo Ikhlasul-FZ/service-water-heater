@@ -26,14 +26,14 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-auto flex flex-col items-center text-center max-w-5xl">
-        {/* Top Gold Pill Badge */}
+        {/* Top Blue Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#d4af37]/70 bg-black/70 backdrop-blur-md text-[#f3cf7a] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-6 sm:mb-8 shadow-[0_0_20px_rgba(212,175,55,0.15)]"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#3b82f6]/70 bg-black/70 backdrop-blur-md text-[#60a5fa] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-6 sm:mb-8 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
         >
-          <Shield className="w-3.5 h-3.5 text-[#d4af37] fill-[#d4af37]/20" />
+          <Shield className="w-3.5 h-3.5 text-[#3b82f6] fill-[#3b82f6]/20" />
           <span>{t("hero.badge")}</span>
         </motion.div>
 
@@ -45,7 +45,7 @@ export function Hero() {
           className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.12] tracking-tight mb-4 sm:mb-6 uppercase"
         >
           {t("hero.title_main_1")}{" "}
-          <span className="text-[#f5cb42] block sm:inline">
+          <span className="text-[#38bdf8] block sm:inline">
             {t("hero.title_main_2")}
           </span>
         </motion.h1>
@@ -61,8 +61,8 @@ export function Hero() {
             {t("hero.subtitle_highlight")}
           </p>
 
-          <div className="inline-flex items-center gap-2 bg-black/60 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#f3cf7a]">
-            <MapPin className="w-4 h-4 text-[#d4af37]" />
+          <div className="inline-flex items-center gap-2 bg-black/60 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-[#93c5fd]">
+            <MapPin className="w-4 h-4 text-[#3b82f6]" />
             <span>{t("hero.location")}</span>
           </div>
         </motion.div>
@@ -88,7 +88,7 @@ export function Hero() {
           ].map((brand) => (
             <span
               key={brand}
-              className="bg-black/60 border border-white/15 backdrop-blur-md rounded-full px-3.5 py-1 text-[10px] sm:text-xs font-extrabold text-neutral-300 tracking-wider hover:border-[#d4af37]/60 hover:text-[#f3cf7a] transition-all"
+              className="bg-black/60 border border-white/15 backdrop-blur-md rounded-full px-3.5 py-1 text-[10px] sm:text-xs font-extrabold text-neutral-300 tracking-wider hover:border-[#3b82f6]/60 hover:text-[#60a5fa] transition-all"
             >
               {brand}
             </span>
@@ -130,15 +130,15 @@ export function Hero() {
       >
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs sm:text-sm text-neutral-300">
           <div className="flex items-center gap-2 font-semibold">
-            <Wrench className="w-4 h-4 text-[#d4af37]" />
+            <Wrench className="w-4 h-4 text-[#3b82f6]" />
             <span>{t("hero.feature_1")}</span>
           </div>
           <div className="flex items-center gap-2 font-semibold">
-            <Award className="w-4 h-4 text-[#d4af37]" />
+            <Award className="w-4 h-4 text-[#3b82f6]" />
             <span>{t("hero.feature_2")}</span>
           </div>
           <div className="flex items-center gap-2 font-semibold">
-            <MapPin className="w-4 h-4 text-[#d4af37]" />
+            <MapPin className="w-4 h-4 text-[#3b82f6]" />
             <span>{t("hero.feature_3")}</span>
           </div>
         </div>

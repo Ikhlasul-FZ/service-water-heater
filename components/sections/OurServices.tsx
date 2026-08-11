@@ -3,10 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Zap, Flame, Sun, Droplets } from "lucide-react";
+import { Wrench, PlusCircle, RefreshCw, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const cardIcons = [Zap, Flame, Sun, Droplets];
+const cardIcons = [Wrench, PlusCircle, RefreshCw, ShieldCheck];
 
 export function OurServices() {
   const { t } = useLanguage();
@@ -33,7 +33,7 @@ export function OurServices() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
@@ -48,7 +48,7 @@ export function OurServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:border-[#d4af37]/60 transition-all duration-300 flex flex-col sm:flex-row items-stretch group"
+                className="bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:border-[#3b82f6]/60 transition-all duration-300 flex flex-col sm:flex-row items-stretch group"
               >
                 {/* Left Side: Image */}
                 <div className="relative w-full sm:w-[42%] h-28 sm:h-auto sm:min-h-55 shrink-0 bg-neutral-100 overflow-hidden">
@@ -63,8 +63,8 @@ export function OurServices() {
 
                 {/* Right Side: Details */}
                 <div className="p-3.5 sm:p-7 flex flex-col justify-center flex-1 text-left">
-                  {/* Gold Icon */}
-                  <div className="mb-1.5 sm:mb-3 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
+                  {/* Blue Icon */}
+                  <div className="mb-1.5 sm:mb-3 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-5 h-5 sm:w-8 sm:h-8 stroke-[1.8]" />
                   </div>
 

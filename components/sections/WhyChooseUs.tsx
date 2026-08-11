@@ -33,10 +33,10 @@ export function WhyChooseUs() {
                     index >= 2 ? "pt-6 md:pt-0" : ""
                   }`}
                 >
-                  <div className="mb-3 text-[#d4af37]">
+                  <div className="mb-3 text-[#3b82f6]">
                     <Icon className="w-8 h-8 sm:w-10 sm:h-10 stroke-[1.5]" />
                   </div>
-                  <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#f3cf7a] mb-1 tracking-tight">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#60a5fa] mb-1 tracking-tight">
                     {stat.value}
                   </span>
                   <span className="text-xs sm:text-sm text-neutral-300 font-medium leading-tight">
@@ -66,7 +66,7 @@ export function WhyChooseUs() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
@@ -81,9 +81,9 @@ export function WhyChooseUs() {
           {areas.map((area: string) => (
             <div
               key={area}
-              className="flex items-center gap-1.5 sm:gap-3 bg-white p-2 sm:p-3.5 rounded-xl border border-neutral-200/70 hover:border-[#d4af37]/60 hover:shadow-md transition-all duration-300"
+              className="flex items-center gap-1.5 sm:gap-3 bg-white p-2 sm:p-3.5 rounded-xl border border-neutral-200/70 hover:border-[#3b82f6]/60 hover:shadow-md transition-all duration-300"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#d4af37] fill-[#d4af37]/20 shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#3b82f6] fill-[#3b82f6]/20 shrink-0" />
               <span className="text-[10px] sm:text-xs md:text-sm lg:text-base font-extrabold text-neutral-800 tracking-tight leading-tight line-clamp-2">
                 {area}
               </span>
@@ -97,10 +97,10 @@ export function WhyChooseUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="max-w-4xl mx-auto bg-[#fdf9ef] border border-[#f5e5bd] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left shadow-xs"
+          className="max-w-4xl mx-auto bg-[#f0f9ff] border border-[#bae6fd] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left shadow-xs"
         >
-          <div className="w-12 h-12 rounded-full bg-[#d4af37]/15 flex items-center justify-center shrink-0">
-            <MapPin className="w-7 h-7 text-[#d4af37] fill-[#d4af37]/30" />
+          <div className="w-12 h-12 rounded-full bg-[#3b82f6]/15 flex items-center justify-center shrink-0">
+            <MapPin className="w-7 h-7 text-[#2563eb] fill-[#2563eb]/30" />
           </div>
           <p className="text-base sm:text-lg font-extrabold text-neutral-900 leading-snug">
             {t("whyUs.banner")}

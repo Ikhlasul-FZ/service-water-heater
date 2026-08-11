@@ -14,7 +14,7 @@ export function Button({
 }: ButtonProps) {
   const variants = {
     primary: "bg-black text-white hover:bg-neutral-800 shadow-lg",
-    secondary: "bg-[#d4af37] text-black hover:bg-[#c59b27] shadow-lg shadow-[#d4af37]/20",
+    secondary: "bg-[#2563eb] text-white hover:bg-[#1d4ed8] shadow-lg shadow-[#2563eb]/20",
     outline: "border border-neutral-300 bg-transparent hover:bg-neutral-100 text-black",
     ghost: "bg-transparent hover:bg-neutral-100 text-black",
   };

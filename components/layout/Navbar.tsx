@@ -69,7 +69,7 @@ export function Navbar() {
               >
                 AMANDA
               </span>
-              <span className="text-[8px] sm:text-[9.5px] font-bold tracking-[0.22em] text-[#d4af37] uppercase mt-0.5">
+              <span className="text-[8px] sm:text-[9.5px] font-bold tracking-[0.22em] text-[#38bdf8] uppercase mt-0.5">
                 HOUSE TEKNIK
               </span>
             </div>
@@ -87,7 +87,7 @@ export function Navbar() {
                 )}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3b82f6] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
 
@@ -150,7 +150,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className="text-xl font-medium text-black hover:text-[#d4af37] transition-colors"
+                    className="text-xl font-medium text-black hover:text-[#3b82f6] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}

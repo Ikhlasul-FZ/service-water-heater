@@ -32,7 +32,7 @@ export function Services() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
@@ -47,10 +47,10 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl p-3 sm:p-8 lg:p-10 flex flex-col items-center text-center hover:shadow-xl hover:border-[#d4af37]/60 transition-all duration-300 group"
+                className="bg-white border border-neutral-200/90 rounded-xl sm:rounded-2xl p-3 sm:p-8 lg:p-10 flex flex-col items-center text-center hover:shadow-xl hover:border-[#3b82f6]/60 transition-all duration-300 group"
               >
-                {/* Gold Icon */}
-                <div className="mb-2 sm:mb-5 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
+                {/* Blue Icon */}
+                <div className="mb-2 sm:mb-5 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12 stroke-[1.5]" />
                 </div>
 

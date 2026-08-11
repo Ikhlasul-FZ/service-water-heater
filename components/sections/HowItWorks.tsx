@@ -37,7 +37,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
@@ -58,11 +58,11 @@ export function HowItWorks() {
               >
                 {/* Connecting Vertical Line */}
                 {!isLast && (
-                  <div className="absolute left-6.75 sm:left-8.75 top-13.5 sm:top-17.5 -bottom-10 sm:-bottom-12 w-0.5 bg-[#ebd69f] z-0" />
+                  <div className="absolute left-6.75 sm:left-8.75 top-13.5 sm:top-17.5 -bottom-10 sm:-bottom-12 w-0.5 bg-[#93c5fd] z-0" />
                 )}
 
                 {/* Circular Icon Badge */}
-                <div className="w-14 h-14 sm:w-18 sm:h-18 rounded-full bg-white border-2 border-[#e6d39c] shadow-xs flex items-center justify-center text-[#d4af37] shrink-0 z-10 group-hover:border-[#d4af37] group-hover:scale-105 transition-all duration-300">
+                <div className="w-14 h-14 sm:w-18 sm:h-18 rounded-full bg-white border-2 border-[#93c5fd] shadow-xs flex items-center justify-center text-[#2563eb] shrink-0 z-10 group-hover:border-[#2563eb] group-hover:scale-105 transition-all duration-300">
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
                 </div>
 

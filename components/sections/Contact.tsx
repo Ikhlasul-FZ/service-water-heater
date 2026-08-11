@@ -39,7 +39,7 @@ export function Contact() {
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase tracking-tight leading-tight text-white mb-4">
                 BUTUH SERVICE <br />
-                <span className="text-[#f5cb42]">AMANDA HOUSE TEKNIK?</span>
+                <span className="text-[#38bdf8]">AMANDA HOUSE TEKNIK?</span>
               </h2>
 
               <p className="text-xs sm:text-sm text-neutral-300 mb-6 font-normal leading-relaxed">
@@ -50,8 +50,8 @@ export function Contact() {
               <div className="space-y-3 mb-8">
                 {checklist.map((item: string) => (
                   <div key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-[#d4af37] shrink-0">
-                      <CheckCircle2 className="w-4 h-4 fill-[#d4af37]/30" />
+                    <div className="w-6 h-6 rounded-full bg-[#2563eb]/20 flex items-center justify-center text-[#3b82f6] shrink-0">
+                      <CheckCircle2 className="w-4 h-4 fill-[#3b82f6]/30" />
                     </div>
                     <span className="text-xs sm:text-sm font-bold text-white tracking-tight">
                       {item}
@@ -81,18 +81,18 @@ export function Contact() {
                 href="https://wa.me/6285337093748?text=Halo%20Amanda%20House%20Teknik,%20saya%20ingin%20menjadwalkan%20kunjungan%20teknisi%20service%20water%20heater."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-black/60 border border-[#d4af37]/70 hover:bg-[#d4af37]/20 text-[#f3cf7a] font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition-all uppercase text-xs sm:text-sm tracking-wider"
+                className="w-full bg-black/60 border border-[#3b82f6]/70 hover:bg-[#3b82f6]/20 text-[#60a5fa] font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition-all uppercase text-xs sm:text-sm tracking-wider"
               >
-                <Calendar className="w-4 h-4 text-[#d4af37]" />
+                <Calendar className="w-4 h-4 text-[#3b82f6]" />
                 <span>{t("contact.cta_schedule")}</span>
               </a>
 
               {/* Phone Direct Button */}
               <a
                 href="tel:085337093748"
-                className="w-full bg-black/60 border border-[#d4af37]/70 hover:bg-[#d4af37]/20 text-[#f3cf7a] font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition-all uppercase text-xs sm:text-sm tracking-wider"
+                className="w-full bg-black/60 border border-[#3b82f6]/70 hover:bg-[#3b82f6]/20 text-[#60a5fa] font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-3 transition-all uppercase text-xs sm:text-sm tracking-wider"
               >
-                <Phone className="w-4 h-4 text-[#d4af37]" />
+                <Phone className="w-4 h-4 text-[#3b82f6]" />
                 <span>{t("contact.phone_number")}</span>
               </a>
             </div>
@@ -117,9 +117,9 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white border border-amber-200/80 rounded-2xl p-6 sm:p-7 shadow-xs max-w-xl mx-auto text-center mb-10 flex items-center justify-center gap-5"
+          className="bg-white border border-sky-200/80 rounded-2xl p-6 sm:p-7 shadow-xs max-w-xl mx-auto text-center mb-10 flex items-center justify-center gap-5"
         >
-          <div className="w-14 h-14 rounded-full bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] shrink-0">
+          <div className="w-14 h-14 rounded-full bg-[#2563eb]/15 border border-[#3b82f6]/40 flex items-center justify-center text-[#2563eb] shrink-0">
             <Clock className="w-7 h-7 stroke-[1.8]" />
           </div>
           <div className="flex flex-col text-left">
@@ -129,7 +129,7 @@ export function Contact() {
             <p className="text-xs sm:text-sm text-neutral-600 font-medium">
               {t("contact.hours_sub")}
             </p>
-            <p className="text-xs sm:text-sm font-extrabold text-[#c59b27]">
+            <p className="text-xs sm:text-sm font-extrabold text-[#2563eb]">
               {t("contact.hours_time")}
             </p>
           </div>
@@ -156,7 +156,7 @@ export function Contact() {
                     : "py-6 sm:py-7"
                 }`}
               >
-                <div className="text-[#d4af37] shrink-0 pt-0.5">
+                <div className="text-[#3b82f6] shrink-0 pt-0.5">
                   <Icon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
                 </div>
                 <div className="flex flex-col text-left">
@@ -193,7 +193,7 @@ export function Contact() {
 
           {/* Address Overlay Card */}
           <div className="absolute bottom-6 left-6 right-6 sm:left-10 sm:right-auto sm:max-w-md bg-black/90 backdrop-blur-md p-5 sm:p-6 rounded-2xl border border-white/20 shadow-xl text-white text-left">
-            <div className="flex items-center gap-2 text-[#d4af37] text-xs font-extrabold uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-[#38bdf8] text-xs font-extrabold uppercase tracking-widest mb-2">
               <MapPin className="w-4 h-4" />
               <span>{t("contact.office_title")}</span>
             </div>

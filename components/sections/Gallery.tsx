@@ -53,7 +53,7 @@ export function Gallery() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
@@ -66,7 +66,7 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer bg-white border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:border-[#d4af37]/60 transition-all duration-300 flex flex-col"
+              className="group cursor-pointer bg-white border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-xl hover:border-[#3b82f6]/60 transition-all duration-300 flex flex-col"
               onClick={() => setSelectedImage(project.image)}
             >
               {/* Image Box */}
@@ -80,13 +80,13 @@ export function Gallery() {
                 />
 
                 {/* Top Badge Overlay */}
-                <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[9px] font-extrabold text-[#f3cf7a] border border-white/10 uppercase tracking-widest">
+                <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-[9px] font-extrabold text-[#60a5fa] border border-white/10 uppercase tracking-widest">
                   #{project.id}
                 </div>
 
-                {/* Hover Golden Overlay Icon */}
+                {/* Hover Blue Overlay Icon */}
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-10 h-10 rounded-full bg-[#3b82f6] text-white flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
                     <ArrowUpRight className="w-5 h-5 stroke-[2.5]" />
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export function Gallery() {
 
               {/* Text Info */}
               <div className="p-4 flex flex-col text-left bg-white">
-                <h3 className="text-xs sm:text-sm font-extrabold text-black group-hover:text-[#c59b27] transition-colors line-clamp-1 uppercase tracking-tight">
+                <h3 className="text-xs sm:text-sm font-extrabold text-black group-hover:text-[#2563eb] transition-colors line-clamp-1 uppercase tracking-tight">
                   {project.title}
                 </h3>
                 <p className="text-[10px] sm:text-xs text-neutral-500 font-normal line-clamp-1 mt-0.5">
@@ -109,9 +109,9 @@ export function Gallery() {
         <div className="flex justify-center">
           <button
             onClick={() => setShowAll(true)}
-            className="flex items-center justify-center gap-3 bg-[#0a0d12] hover:bg-[#151921] border border-[#d4af37]/80 text-[#f3cf7a] px-8 py-4 rounded-xl sm:rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+            className="flex items-center justify-center gap-3 bg-[#0a0d12] hover:bg-[#151921] border border-[#3b82f6]/80 text-[#60a5fa] px-8 py-4 rounded-xl sm:rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
           >
-            <ImageIcon className="w-4 h-4 text-[#d4af37]" />
+            <ImageIcon className="w-4 h-4 text-[#3b82f6]" />
             <span>{t("gallery.viewAll")}</span>
           </button>
         </div>
@@ -129,7 +129,7 @@ export function Gallery() {
           >
             <div className="container mx-auto px-6 py-6 flex justify-between items-center border-b border-white/10">
               <div className="flex flex-col text-left">
-                <h2 className="text-xs font-bold text-[#d4af37] uppercase tracking-widest">
+                <h2 className="text-xs font-bold text-[#3b82f6] uppercase tracking-widest">
                   {t("gallery.tag")}
                 </h2>
                 <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
@@ -138,7 +138,7 @@ export function Gallery() {
               </div>
               <button
                 onClick={() => setShowAll(false)}
-                className="w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all cursor-pointer"
+                className="w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#3b82f6] hover:text-white flex items-center justify-center transition-all cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -150,7 +150,7 @@ export function Gallery() {
                   {allArchives.map((item, i) => (
                     <div
                       key={`${item.id}-${i}`}
-                      className="bg-black/60 border border-white/15 rounded-2xl overflow-hidden cursor-pointer group hover:border-[#d4af37]/60 transition-all"
+                      className="bg-black/60 border border-white/15 rounded-2xl overflow-hidden cursor-pointer group hover:border-[#3b82f6]/60 transition-all"
                       onClick={() => setSelectedImage(item.image)}
                     >
                       <div className="aspect-4/5 relative bg-neutral-900">
@@ -161,7 +161,7 @@ export function Gallery() {
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                          <div className="w-9 h-9 rounded-full bg-[#d4af37] text-black flex items-center justify-center shadow-lg">
+                          <div className="w-9 h-9 rounded-full bg-[#3b82f6] text-white flex items-center justify-center shadow-lg">
                             <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                           </div>
                         </div>
@@ -194,7 +194,7 @@ export function Gallery() {
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-[#d4af37] hover:text-black flex items-center justify-center transition-all z-10 cursor-pointer"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-[#3b82f6] hover:text-white flex items-center justify-center transition-all z-10 cursor-pointer"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-6 h-6" />

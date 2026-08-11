@@ -2,20 +2,20 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Flame, Sun, ChevronUp, ChevronDown, CheckCircle2 } from "lucide-react";
+import { Wrench, Droplets, ShieldAlert, ChevronUp, ChevronDown, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const categoryIcons: Record<string, any> = {
-  electric: Zap,
-  gas: Flame,
-  solar: Sun,
+  repair: Wrench,
+  leak: Droplets,
+  maintenance: ShieldAlert,
 };
 
 export function CommonIssues() {
   const { t } = useLanguage();
   const categories = t("commonIssues.categories") || [];
 
-  // All cards expanded by default to match reference image, user can toggle
+  // All cards expanded by default, user can toggle
   const [openIndexes, setOpenIndexes] = useState<number[]>([0, 1, 2]);
 
   const toggleCategory = (index: number) => {
@@ -45,14 +45,14 @@ export function CommonIssues() {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-16 h-0.5 bg-[#d4af37] mx-auto mt-4"
+            className="w-16 h-0.5 bg-[#3b82f6] mx-auto mt-4"
           />
         </div>
 
         {/* Accordions Stack */}
         <div className="flex flex-col gap-6 max-w-4xl mx-auto">
           {categories.map((cat: any, index: number) => {
-            const Icon = categoryIcons[cat.type] || Zap;
+            const Icon = categoryIcons[cat.type] || Wrench;
             const isOpen = openIndexes.includes(index);
 
             return (
@@ -62,7 +62,7 @@ export function CommonIssues() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:border-[#d4af37]/60 transition-all duration-300"
+                className="bg-white border border-neutral-200/90 rounded-2xl overflow-hidden shadow-xs hover:border-[#3b82f6]/60 transition-all duration-300"
               >
                 {/* Header Toggle Button */}
                 <button
@@ -70,7 +70,7 @@ export function CommonIssues() {
                   className="w-full px-6 py-5 sm:px-8 sm:py-6 flex items-center justify-between bg-white text-left cursor-pointer hover:bg-neutral-50/50 transition-colors"
                 >
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="text-[#d4af37] shrink-0">
+                    <div className="text-[#3b82f6] shrink-0">
                       <Icon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
                     </div>
                     <h3 className="text-sm sm:text-base lg:text-lg font-black text-black tracking-tight uppercase">
@@ -78,7 +78,7 @@ export function CommonIssues() {
                     </h3>
                   </div>
 
-                  <div className="text-[#d4af37] shrink-0 ml-2">
+                  <div className="text-[#3b82f6] shrink-0 ml-2">
                     {isOpen ? (
                       <ChevronUp className="w-5 h-5" />
                     ) : (
@@ -103,7 +103,7 @@ export function CommonIssues() {
                               key={item}
                               className="flex items-center gap-3 text-xs sm:text-sm font-semibold text-neutral-800"
                             >
-                              <CheckCircle2 className="w-4 h-4 text-[#d4af37] fill-[#d4af37]/20 shrink-0" />
+                              <CheckCircle2 className="w-4 h-4 text-[#3b82f6] fill-[#3b82f6]/20 shrink-0" />
                               <span>{item}</span>
                             </div>
                           ))}

@@ -29,7 +29,7 @@ export function Footer() {
                 <span className="font-black tracking-wider uppercase leading-none text-white text-lg sm:text-xl">
                   AMANDA
                 </span>
-                <span className="text-[8px] sm:text-[9.5px] font-bold tracking-[0.22em] text-[#d4af37] uppercase mt-0.5">
+                <span className="text-[8px] sm:text-[9.5px] font-bold tracking-[0.22em] text-[#38bdf8] uppercase mt-0.5">
                   HOUSE TEKNIK
                 </span>
               </div>
@@ -41,7 +41,7 @@ export function Footer() {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-[#f3cf7a] uppercase tracking-widest mb-5">
+            <h4 className="text-xs sm:text-sm font-extrabold text-[#60a5fa] uppercase tracking-widest mb-5">
               {t("footer.links_title")}
             </h4>
             <ul className="space-y-3">
@@ -54,9 +54,9 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-neutral-400 hover:text-[#f3cf7a] transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-xs sm:text-sm text-neutral-400 hover:text-[#60a5fa] transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]/40 group-hover:bg-[#d4af37] transition-all" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6]/40 group-hover:bg-[#3b82f6] transition-all" />
                     <span>{link.name}</span>
                   </Link>
                 </li>
@@ -66,21 +66,21 @@ export function Footer() {
 
           {/* Col 3: Key Services */}
           <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-[#f3cf7a] uppercase tracking-widest mb-5">
+            <h4 className="text-xs sm:text-sm font-extrabold text-[#60a5fa] uppercase tracking-widest mb-5">
               {t("footer.services_title")}
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm text-neutral-400">
               {[
-                "Service Water Heater Listrik",
-                "Service Water Heater Gas",
-                "Service Solahart & Solar",
+                "Service Water Heater Panggilan",
+                "Perbaikan & Sparepart",
                 "Descaling & Kuras Tangki",
+                "Pemasangan Unit Baru",
               ].map((service: string) => (
                 <li
                   key={service}
-                  className="hover:text-[#f3cf7a] transition-colors cursor-pointer flex items-center gap-2"
+                  className="hover:text-[#60a5fa] transition-colors cursor-pointer flex items-center gap-2"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]/40" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6]/40" />
                   <span>{service}</span>
                 </li>
               ))}
@@ -89,7 +89,7 @@ export function Footer() {
 
           {/* Col 4: Contact Info */}
           <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-[#f3cf7a] uppercase tracking-widest mb-6">
+            <h4 className="text-xs sm:text-sm font-extrabold text-[#60a5fa] uppercase tracking-widest mb-6">
               {t("footer.contact_title")}
             </h4>
             <ul className="space-y-4">
@@ -100,14 +100,14 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3.5 group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] shrink-0 group-hover:bg-[#d4af37] group-hover:text-black transition-all duration-300 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#2563eb]/15 border border-[#3b82f6]/40 flex items-center justify-center text-[#3b82f6] shrink-0 group-hover:bg-[#3b82f6] group-hover:text-white transition-all duration-300 shadow-xs">
                     <Phone className="w-4.5 h-4.5" />
                   </div>
                   <div className="flex flex-col text-left">
                     <span className="text-[10px] text-neutral-400 uppercase font-bold tracking-wider leading-none mb-1">
                       Telepon & WhatsApp
                     </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-white group-hover:text-[#f3cf7a] transition-colors leading-tight">
+                    <span className="text-xs sm:text-sm font-extrabold text-white group-hover:text-[#60a5fa] transition-colors leading-tight">
                       0853-3709-3748
                     </span>
                   </div>
@@ -119,14 +119,14 @@ export function Footer() {
                   href="mailto:amandahouseteknik@gmail.com"
                   className="flex items-center gap-3.5 group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] shrink-0 group-hover:bg-[#d4af37] group-hover:text-black transition-all duration-300 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#2563eb]/15 border border-[#3b82f6]/40 flex items-center justify-center text-[#3b82f6] shrink-0 group-hover:bg-[#3b82f6] group-hover:text-white transition-all duration-300 shadow-xs">
                     <Mail className="w-4.5 h-4.5" />
                   </div>
                   <div className="flex flex-col text-left min-w-0">
                     <span className="text-[10px] text-neutral-400 uppercase font-bold tracking-wider leading-none mb-1">
                       Email Resmi
                     </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-white group-hover:text-[#f3cf7a] transition-colors leading-tight break-all">
+                    <span className="text-xs sm:text-sm font-extrabold text-white group-hover:text-[#60a5fa] transition-colors leading-tight break-all">
                       amandahouseteknik@gmail.com
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export function Footer() {
 
               <li>
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-[#d4af37]/15 border border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] shrink-0 shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#2563eb]/15 border border-[#3b82f6]/40 flex items-center justify-center text-[#3b82f6] shrink-0 shadow-xs">
                     <MapPin className="w-4.5 h-4.5" />
                   </div>
                   <div className="flex flex-col text-left">
@@ -159,11 +159,11 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-xs text-neutral-400 font-medium">
             <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
+              <ShieldCheck className="w-4 h-4 text-[#3b82f6]" />
               Bergaransi Resmi
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-[#d4af37]" />
+              <Award className="w-4 h-4 text-[#3b82f6]" />
               Teknisi Berpengalaman
             </span>
           </div>
