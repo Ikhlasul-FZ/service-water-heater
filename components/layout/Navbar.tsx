@@ -53,7 +53,7 @@ export function Navbar() {
               )}
             >
               <Image
-                src="/images/log.png"
+                src="/images/volley.png"
                 alt="Amanda House Teknik"
                 fill
                 className="object-contain"

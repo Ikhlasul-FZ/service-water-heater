@@ -18,7 +18,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-11 h-11 transition-transform group-hover:scale-105 shrink-0">
                 <Image
-                  src="/images/log.png"
+                  src="/images/volley.png"
                   alt="Logo"
                   fill
                   className="object-contain"
